@@ -1,6 +1,7 @@
-class match_id(NumberField):
+class match_id(IntegerField):
     title = 'Match ID'
+    auto_increment = True
 
-class team_id(NumberField):
+class team_id(IntegerField):
     title = 'Team ID'
 

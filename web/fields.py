@@ -1,7 +1,6 @@
-class match_id(IntegerField):
-    title = 'Match ID'
-    auto_increment = True
+import flask_wtf
+from wtforms.fields import *
 
-class team_id(IntegerField):
-    title = 'Team ID'
-
+class Form(flask_wtf.Form):
+    match_id = IntegerField('Match ID')
+    team_id = IntegerField('Team ID')

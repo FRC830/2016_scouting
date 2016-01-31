@@ -1,13 +1,12 @@
-% rebase('base.tpl', title='Scouting form')
-% from form import render_field
 <h2>Scouting form</h2>
-<form action="/form/save" method="post" id="scouting-form">
+<form method="post" id="scouting-form">
+  {{ form.csrf_token }}
   <div class="row form-group">
     <div class="col-md-4 col-xs-12">
-      % render_field('match_id')
+      {{ form.match_id.label }} {{ form.match_id }}
     </div>
     <div class="col-md-4 col-xs-12">
-      % render_field('team_id')
+      {{ form.team_id.label }} {{ form.team_id }}
     </div>
   </div>
   <div class="row">

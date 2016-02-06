@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block body %}
 <h2>Scouting form</h2>
 <form method="post" id="scouting-form">
   {{ form.csrf_token }}
@@ -71,7 +73,7 @@
       </div>
       <div class="col-md-4">
         {{ form.low_scores.label }} {{ form.low_scores }}
-      </div>      
+      </div>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-12">
@@ -102,3 +104,4 @@
     <div class="col-md-4"><input type="submit" class="btn btn-primary" value="Save"></div>
   </div>
 </form>
+{% endblock %}

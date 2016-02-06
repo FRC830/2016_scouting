@@ -1,1 +1,11 @@
 /* Form-specific CSS */
+li{
+	display: inline-block;
+	padding-right: 2em;
+}
+.game-period{
+	border-top: 1px solid #bbb;
+}
+#logo{
+	height:4em;
+}

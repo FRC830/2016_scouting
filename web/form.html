@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block body %}
-<h2>Scouting form</h2>
+<div class="row">
+  <div class="col-md-4 col-xs-4">
+    <h2>Scouting form</h2>
+  </div>
+  <div class="col-md-8 col-xs-8 text-right">
+    <img src="static/custom/logo.png" id="logo"></img>
+  </div>
+</div>
 <form method="post" id="scouting-form">
   {{ form.csrf_token }}
   <div class="row form-group">
@@ -10,6 +17,7 @@
     <div class="col-md-4 col-xs-12">
       {{ form.team_id.label }} {{ form.team_id }}
     </div>
+  </div>
   <div class="game-period">
     <h3>Autonomous</h3>
     <div class="row">
@@ -18,7 +26,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-11 col-xs-12">
         {{ form.auton_breach.label }} {{ form.auton_breach }}
       </div>
     </div>
@@ -31,55 +39,66 @@
   <div class="game-period">
     <h3>Teleop</h3>
     <div class="row">
-      <p>Defenses Breached At Some Point:</p>
+      <div class="col-md-6 col-xs-12">
+        <p>Defenses Breached At Some Point:</p>
+      </div>
     </div>
-    <div class="row form-group">
-      <div class="col-md-1 col-xs-12">
-        {{ form.lb_breach.label }} {{ form.lb_breach }}
-      </div>
-      <div class="col-md-1 col-xs-12">
-        {{ form.pc_breach.label }} {{ form.pc_breach }}
-      </div>
-      <div class="col-md-1 col-xs-12">
+
+    <div class="row">
+      <div class="col-md-2 col-xs-12">
         {{ form.cf_breach.label }} {{ form.cf_breach }}
       </div>
-      <div class="col-md-1 col-xs-12">
+      <div class="col-md-2 col-xs-12">
         {{ form.rp_breach.label }} {{ form.rp_breach }}
       </div>
-      <div class="col-md-1 col-xs-12">
-        {{ form.db_breach.label }} {{ form.db_breach }}
-      </div>
-      <div class="col-md-1 col-xs-12">
+      <div class="col-md-2 col-xs-12">
         {{ form.sp_breach.label }} {{ form.sp_breach }}
       </div>
-      <div class="col-md-1 col-xs-12">
-        {{ form.rw_breach.label }} {{ form.rw_breach }}
-      </div>
-      <div class="col-md-1 col-xs-12">
+      <div class="col-md-2 col-xs-12">
         {{ form.rt_breach.label }} {{ form.rt_breach }}
       </div>
+      <div class="col-md-2 col-xs-12">
+        {{ form.lb_breach.label }} {{ form.lb_breach }}
+      </div>      
     </div>
+    <div class="row">
+      <div class="col-md-2 col-xs-12">
+        {{ form.pc_breach.label }} {{ form.pc_breach }}
+      </div>
+      <div class="col-md-2 col-xs-12">
+        {{ form.mo_breach.label }} {{ form.mo_breach }}
+      </div>   
+      <div class="col-md-2 col-xs-12">
+        {{ form.db_breach.label }} {{ form.db_breach }}
+      </div>   
+      <div class="col-md-2 col-xs-12">
+        {{ form.rw_breach.label }} {{ form.rw_breach }}
+      </div>            
+    </div>
+
     <div class="row">
       <div class="col-md-6 col-xs-12">
         {{ form.breach_count.label }} {{ form.breach_count }}
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-5">
         {{ form.high_scores.label }} {{ form.high_scores }}
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         {{ form.high_misses.label }} {{ form.high_misses }}
       </div>
-      <div class="col-md-4">
+    </div>
+    <div class="row">
+      <div class="col-md-5">
         {{ form.low_scores.label }} {{ form.low_scores }}
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-5 col-xs-12">
         {{ form.fouls.label }} {{ form.fouls }}
       </div>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-5 col-xs-12">
         {{ form.tech_fouls.label }} {{ form.tech_fouls }}
       </div>
     </div>
@@ -96,8 +115,15 @@
     <div class="col-md-3 col-xs-12">
       {{ form.hang.label }} {{ form.hang }}
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <h3>Comments</h3>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-8 col-xs-12">
-      {{ form.comments.label }} {{ form.comments(rows='5', cols='50') }}
+      {{ form.comments(rows='5', cols='50') }}
     </div>
   </div>
   <div class="row">

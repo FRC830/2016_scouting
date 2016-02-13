@@ -39,68 +39,63 @@
   <div class="game-period">
     <h3>Teleop</h3>
     <div class="row">
-      <div class="col-md-6 col-xs-12">
-        <p>Defenses Breached At Some Point:</p>
+      <div class="col-md-4 col-xs-12 text-right">
+        {{ form.breach_count.label }} {{ form.breach_count }}
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.cf_breach.label }} {{ form.cf_breach }}
       </div>
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.rp_breach.label }} {{ form.rp_breach }}
       </div>
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.sp_breach.label }} {{ form.sp_breach }}
       </div>
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.rt_breach.label }} {{ form.rt_breach }}
       </div>
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.lb_breach.label }} {{ form.lb_breach }}
       </div>      
     </div>
     <div class="row">
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.pc_breach.label }} {{ form.pc_breach }}
       </div>
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.mo_breach.label }} {{ form.mo_breach }}
       </div>   
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.db_breach.label }} {{ form.db_breach }}
       </div>   
-      <div class="col-md-2 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.rw_breach.label }} {{ form.rw_breach }}
       </div>            
     </div>
 
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-        {{ form.breach_count.label }} {{ form.breach_count }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
+    <div class="row">   
+      <div class="col-md-3 col-xs-12 text-right">
         {{ form.high_scores.label }} {{ form.high_scores }}
       </div>
-      <div class="col-md-5">
-        {{ form.high_misses.label }} {{ form.high_misses }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-        {{ form.low_scores.label }} {{ form.low_scores }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-5 col-xs-12">
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.fouls.label }} {{ form.fouls }}
-      </div>
-      <div class="col-md-5 col-xs-12">
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-xs-12 text-right">
+        {{ form.high_misses.label }} {{ form.high_misses }}
+      </div>  
+      <div class="col-md-2 col-xs-12 text-right">
         {{ form.tech_fouls.label }} {{ form.tech_fouls }}
       </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-xs-12 text-right">
+        {{ form.low_scores.label }} {{ form.low_scores }}
+      </div>   
     </div>
     <div class="row">
       <div class="col-md-8 col-xs-12">

@@ -3,6 +3,9 @@ li{
 	display: inline-block;
 	padding-right: 2em;
 }
+input[type='text']{
+	width: 3em;
+}
 .game-period{
 	border-top: 1px solid #bbb;
 }

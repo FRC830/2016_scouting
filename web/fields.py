@@ -34,14 +34,15 @@ class Form(flask_wtf.Form):
     rt_breach = BooleanField('Rough Terrain')
 
         #Other
-    breach_count = IntegerField('Number of defenses breached')
-    high_scores = IntegerField('High Goals Scored')
-    high_misses = IntegerField('High Shots Missed')
-    low_scores = IntegerField('Low Goals Scored')
-    fouls = IntegerField('Fouls')
-    tech_fouls = IntegerField('Tech Fouls')
+    breach_count = IntegerField('Number of defenses breached', default=0)
+    high_scores = IntegerField('High Goals Scored', default=0)
+    high_misses = IntegerField('High Shots Missed', default=0)
+    low_scores = IntegerField('Low Goals Scored', default=0)
+    fouls = IntegerField('Fouls', default=0)
+    tech_fouls = IntegerField('Tech Fouls', default=0)
     defense = RadioField('Robot Defense', choices=[('No Defense','Did not play defense'),
-                                                   ('Bad','Bad'), ('Good','Good')])
+                                                   ('Bad','Bad'), ('Good','Good')],
+                                                   default="No Defense")
     #EndGame Section
     hang = BooleanField('Robot Scaled Tower')
     comments = TextAreaField('Put comments here')

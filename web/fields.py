@@ -8,7 +8,7 @@ class Form(flask_wtf.Form):
     auton_start = RadioField('Robot Starting Location',choices=[('Neutral Zone','Neutral Zone'), ('Courtyard','Courtyard')],
                              default='Neutral Zone')
     auton_breach = RadioField('Defense Crossed in Auton', choices=[('None','None'),
-                                                                   ('Touched a defense, did not cross','Touched a defense, did not cross'),
+                                                                   ('Touch not cross','Touched a defense, did not cross'),
                                                                    ('Low bar','Low bar'),
                                                                    ('Portcullis','Portcullis'),
                                                                    ('Cheval de Frise','Cheval de Frise'),
@@ -40,10 +40,9 @@ class Form(flask_wtf.Form):
     low_scores = IntegerField('Low Goals Scored', default=0)
     fouls = IntegerField('Fouls', default=0)
     tech_fouls = IntegerField('Tech Fouls', default=0)
-    defense = RadioField('Robot Defense', choices=[('No Defense','Did not play defense'),
-                                                   ('Bad','Bad'), ('Good','Good')],
-                                                   default="No Defense")
-    #EndGame Section
+    
+    defense_rating = RadioField('How well did they play defense?', choices=[('0','Did not Defend'), ('1', 'Bad Defense'), ('2', 'Moderate Defense'), ('3', 'Best Defense')], default="0")
+    defense_time = RadioField('How much time did they spend on defense?', choices=[('0', 'No Time'), ('1', 'Less than Half'), ('2', 'Most of the Time'), ('3', 'All Match')], default="0")
+
     hang = BooleanField('Robot Scaled Tower')
     comments = TextAreaField('Put comments here')
-    

@@ -7,19 +7,12 @@ class Form(flask_wtf.Form):
     #Auton Section
     auton_start = RadioField('Robot Starting Location',choices=[('Neutral Zone','Neutral Zone'), ('Courtyard','Courtyard')],
                              default='Neutral Zone')
-    auton_breach = RadioField('Defense Crossed in Auton', choices=[('None','None'),
-                                                                   ('Touch not cross','Touched a defense, did not cross'),
-                                                                   ('Low bar','Low bar'),
-                                                                   ('Portcullis','Portcullis'),
-                                                                   ('Cheval de Frise','Cheval de Frise'),
-                                                                   ('Moat','Moat'),
-                                                                   ('Ramparts','Ramparts'),
-                                                                   ('Drawbridge','Drawbridge'),
-                                                                   ('Sally Port','Sally Port'),
-                                                                   ('Rock Wall','Rock Wall'),
-                                                                   ('Rough Terrain','Rough Terrain')])
-    auton_score = RadioField('Ball Scored', choices=[('None','None'), ('Low Goal','Low Goal'), ('High Goal','High Goal')],
-                             default='None')
+    auton_breach = RadioField('Defense Crossed in Auton', choices=[('0','None'),
+                                                                   ('1','Touched'),
+                                                                   ('2','Crossed (Mark the defense in the Teleop section)')],
+                                                                   default='0')
+    auton_score = RadioField('Ball Scored', choices=[('0','None'), ('1','Low Goal'), ('2','High Goal')],
+                             default='0')
     #Teleop Section
 
         #Breaching checkboxes
@@ -34,7 +27,7 @@ class Form(flask_wtf.Form):
     rt_breach = BooleanField('Rough Terrain')
 
         #Other
-    breach_count = IntegerField('Number of defenses breached', default=0)
+    breach_count = IntegerField('Number of defenses crossed', default=0)
     high_scores = IntegerField('High Goals Scored', default=0)
     high_misses = IntegerField('High Shots Missed', default=0)
     low_scores = IntegerField('Low Goals Scored', default=0)

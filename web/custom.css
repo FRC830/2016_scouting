@@ -10,5 +10,8 @@ input[type='text']{
 	border-top: 1px solid #bbb;
 }
 #logo{
-	height:4em;
+	max-width: 50%;
+}
+textarea{
+	width:100%;
 }

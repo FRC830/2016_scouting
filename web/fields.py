@@ -27,12 +27,16 @@ class Form(flask_wtf.Form):
     rt_breach = BooleanField('Rough Terrain')
 
         #Other
-    breach_count = IntegerField('Number of defenses crossed', default=0)
-    high_scores = IntegerField('High Goals Scored', default=0)
-    high_misses = IntegerField('High Shots Missed', default=0)
-    low_scores = IntegerField('Low Goals Scored', default=0)
-    fouls = IntegerField('Fouls', default=0)
-    tech_fouls = IntegerField('Tech Fouls', default=0)
+    breach_count = IntegerField('Number of defenses crossed', default=0,
+        col_md=6,
+        label_col_md=6,
+        col_sm=8,
+        label_col_sm=12)
+    high_scores = IntegerField('High Goals Scored', default=0, col_sm=6)
+    high_misses = IntegerField('High Shots Missed', default=0, col_sm=6)
+    low_scores = IntegerField('Low Goals Scored', default=0, col_sm=6)
+    fouls = IntegerField('Fouls', default=0, col_sm=6)
+    tech_fouls = IntegerField('Tech Fouls', default=0, col_sm=6)
 
     defense_rating = RadioField('How well did they play defense?', choices=[('0','Did not Defend'), ('1', 'Bad Defense'), ('2', 'Moderate Defense'), ('3', 'Best Defense')], default="0")
     defense_time = RadioField('How much time did they spend on defense?', choices=[('0', 'No Time'), ('1', 'Less than Half'), ('2', 'Most of the Time'), ('3', 'All Match')], default="0")

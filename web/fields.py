@@ -1,5 +1,5 @@
 import flask_wtf
-from wtforms.fields import * #http://wtforms.readthedocs.org/en/latest/fields.html
+from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
 class Form(flask_wtf.Form):
     match_id = IntegerField('Match ID')
@@ -33,7 +33,7 @@ class Form(flask_wtf.Form):
     low_scores = IntegerField('Low Goals Scored', default=0)
     fouls = IntegerField('Fouls', default=0)
     tech_fouls = IntegerField('Tech Fouls', default=0)
-    
+
     defense_rating = RadioField('How well did they play defense?', choices=[('0','Did not Defend'), ('1', 'Bad Defense'), ('2', 'Moderate Defense'), ('3', 'Best Defense')], default="0")
     defense_time = RadioField('How much time did they spend on defense?', choices=[('0', 'No Time'), ('1', 'Less than Half'), ('2', 'Most of the Time'), ('3', 'All Match')], default="0")
 

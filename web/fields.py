@@ -1,6 +1,11 @@
 import flask_wtf
 from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
+class BreachField(CheckboxButtonField):
+    col_md = 2
+    col_sm = 4
+    col_xs = 12
+
 class Form(flask_wtf.Form):
     match_id = IntegerField('Match ID')
     team_id = IntegerField('Team ID')
@@ -15,18 +20,18 @@ class Form(flask_wtf.Form):
                              default='0')
     #Teleop Section
 
-        #Breaching checkboxes
-    lb_breach = BooleanField('Low Bar')
-    pc_breach = BooleanField('Portcullis')
-    cf_breach = BooleanField('Cheval de Frise')
-    mo_breach = BooleanField('Moat')
-    rp_breach = BooleanField('Ramparts')
-    db_breach = BooleanField('Drawbridge')
-    sp_breach = BooleanField('Sally Port')
-    rw_breach = BooleanField('Rock Wall')
-    rt_breach = BooleanField('Rough Terrain')
+    #Breaching checkboxes
+    lb_breach = BreachField('Low Bar')
+    pc_breach = BreachField('Portcullis')
+    cf_breach = BreachField('Cheval de Frise')
+    mo_breach = BreachField('Moat')
+    rp_breach = BreachField('Ramparts')
+    db_breach = BreachField('Drawbridge')
+    sp_breach = BreachField('Sally Port')
+    rw_breach = BreachField('Rock Wall')
+    rt_breach = BreachField('Rough Terrain')
 
-        #Other
+    #Other
     breach_count = IntegerField('Number of defenses crossed', default=0,
         col_md=6,
         label_col_md=6,

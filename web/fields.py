@@ -7,8 +7,8 @@ class BreachField(CheckboxButtonField):
     col_xs = 12
 
 class Form(flask_wtf.Form):
-    match_id = IntegerField('Match ID')
-    team_id = IntegerField('Team ID')
+    match_id = IntegerField('Match ID', buttons=False)
+    team_id = IntegerField('Team ID', buttons=False)
     #Auton Section
     auton_start = RadioField('Robot Starting Location',choices=[('Neutral Zone','Neutral Zone'), ('Courtyard','Courtyard')],
                              default='Neutral Zone')

@@ -46,5 +46,5 @@ class Form(flask_wtf.Form):
     defense_rating = RadioField('How well did they play defense?', choices=[('0','Did not Defend'), ('1', 'Bad Defense'), ('2', 'Moderate Defense'), ('3', 'Best Defense')], default="0")
     defense_time = RadioField('How much time did they spend on defense?', choices=[('0', 'No Time'), ('1', 'Less than Half'), ('2', 'Most of the Time'), ('3', 'All Match')], default="0")
 
-    hang = BooleanField('Robot Scaled Tower')
+    hang = CheckboxButtonField('Robot Scaled Tower', col_md=3)
     comments = TextAreaField('Put comments here')

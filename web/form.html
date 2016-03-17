@@ -13,9 +13,16 @@
   <div class="row form-group">
     {{ form.match_id }}
     {{ form.team_id }}
-    <div class="col-md-2"></div>
-    <div class="col-md-2">
-      <a href="/export" target="_blank" class="btn btn-info">Export data</a>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      {% if conf.get('station', 'none').lower() == 'none' %}
+        <div id="alert" class="alert alert-warning">No player station selected; team ID completion is not available.
+        See {{link_to('config_form', 'Settings')}} to choose a station.</div>
+      {% else %}
+        <label>Player Station: {{conf.get('station', '?')}}</label>
+        <div id="alert" class="alert" style="display: none;"></div>
+      {% endif %}
     </div>
   </div>
   <div class="game-period">

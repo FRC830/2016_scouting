@@ -47,4 +47,4 @@ class Form(flask_wtf.Form):
     defense_time = RadioField('How much time did they spend on defense?', choices=[('0', 'No Time'), ('1', 'Less than Half'), ('2', 'Most of the Time'), ('3', 'All Match')], default="0")
 
     hang = CheckboxButtonField('Robot Scaled Tower', col_md=3)
-    comments = TextAreaField('Put comments here')
+    comments = TextAreaField('', col_lg=12)
